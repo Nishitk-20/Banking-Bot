@@ -7,7 +7,7 @@ module.exports = (sequelize,DataTypes) => {
             allowNull : false
         },
         AccountNumber :{
-            type  : DataTypes.INTEGER.UNSIGNED,
+            type  : DataTypes.BIGINT(11),
             allowNull : false    
         }
     });
