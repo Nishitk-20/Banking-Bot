@@ -16,9 +16,10 @@
     "express-validation": "^3.0.6",
     "helmet": "^4.2.0",
     "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",
     "passport": "^0.4.1",
-    "mysql2" : "^2.2.5",
-    "sequelize" : "^6.3.5"
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
   }
 }
