@@ -6,6 +6,11 @@ router.get("/allUser",(req,res)=>{
     db.User.findAll().then(users=>{res.send(users)});
 });
 
+// router.get("/allBen/:userId",(req,res)=>{
+//     const uid = req.params.userId;
+//     db.Beneficiary.findAll({where : {userId : uid }}).then(ben=>{res.send(ben)});
+// });
+
 router.post("/newUser",(req,res)=>{
     db.User.create({
         username : req.body.username,

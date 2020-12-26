@@ -4,12 +4,12 @@ module.exports = (sequelize,DataTypes) => {
     const Beneficiary = sequelize.define("Beneficiary",{
         name : {
             type : DataTypes.STRING,
-            allowNull : false
+            allowNull : false,
+            primaryKey: true
         },
         AccountNumber :{
             type  : DataTypes.BIGINT(11),
-            allowNull : false,
-            primaryKey: true    
+            allowNull : false  
         },
         type :{
             type :DataTypes.STRING,

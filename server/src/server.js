@@ -10,10 +10,11 @@ app.use(express.json());
 const userRoutes = require("./routes/user");
 const BalanceRoutes  = require("./routes/balance");
 const benRoutes = require("./routes/beneficiary");
-
+const fundRoutes = require("./routes/fund")
 app.use("/api/user",userRoutes);
 app.use("/api/ben",benRoutes);	
 app.use("/api/balance",BalanceRoutes);
+app.use("/api/fund/",fundRoutes);
 
 db.sequelize.sync().then(()=>{
 	app.listen(PORT,()=>{

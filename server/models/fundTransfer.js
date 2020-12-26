@@ -13,7 +13,15 @@ module.exports = (sequelize,DataTypes) => {
         balance : {
             type : DataTypes.BIGINT,
             allowNull : false
-        } 
+        },
+        benName : {
+            type : DataTypes.STRING,
+            allowNull : false,
+            references: {
+                model: 'beneficiaries',
+                key: 'name'
+            }
+        }
     });
     return FundTransfer;
 }
