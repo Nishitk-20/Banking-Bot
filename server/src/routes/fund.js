@@ -2,7 +2,7 @@ const express  = require("express");
 const router = express.Router();
 const db = require("../../models");
 
-router.post("/create",(req,res) =>{
+router.post("/create/:userId",(req,res) =>{
     db.FundTransfer.create(
     { 
         benName: req.body.benName ,
@@ -10,7 +10,14 @@ router.post("/create",(req,res) =>{
         amount: req.body.amount,
         type: req.body.type
     } 
-    ).then(response => {res.send(response)});
+    ).then(response => {
+        console.log(response)
+        db.MiniStatement.create({
+            userId : req.params.userId,
+            timestamp : Date.now(),
+            recTrans : response.id    
+        }).then(result => res.send(result))
+    });
 })
 
 module.exports = router;
