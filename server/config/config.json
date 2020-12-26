@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "@khaitan",
+    "password": "Megabyte@123",
     "database": "banking_bot",
     "host": "127.0.0.1",
     "dialect": "mysql"

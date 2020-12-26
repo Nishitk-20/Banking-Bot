@@ -10,7 +10,14 @@ router.post("/newUser",(req,res)=>{
     db.User.create({
         username : req.body.username,
         AccountNumber  :req.body.AccountNumber
-    }).then(response => res.send(response))
+    }).then(user => {
+        console.log(user.id)
+        db.Balance.create({
+            curBal : 5000,
+            userId : user.id,
+            timestamp : Date.now()
+        }).then(balance => res.send(balance))
+    })
 }); 
 
 module.exports = router;
