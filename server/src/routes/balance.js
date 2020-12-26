@@ -11,7 +11,8 @@ router.get("/:userId",(req,res)=>{
 });
 
 router.put("/update/:userId",(req,res) =>{
-    db.Balance.update({ curBal: req.body.bal }, {
+    db.Balance.update({ curBal: req.body.bal,
+                        timestamp: Date.now() }, {
         where: {
           userId: req.params.userId
         }

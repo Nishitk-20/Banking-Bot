@@ -9,6 +9,11 @@ module.exports = (sequelize,DataTypes) => {
         AccountNumber :{
             type  : DataTypes.BIGINT(11),
             allowNull : false    
+        },
+        auth : {
+            type : DataTypes.BOOLEAN,
+            allowNull : false,
+            defaultValue : false
         }
     });
     return User;
