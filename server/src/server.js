@@ -8,8 +8,10 @@ app.use(express.json());
 
 // Routes
 const userRoutes = require("./routes/user");
+const benRoutes = require("./routes/beneficiary");
 
 app.use("/api/user",userRoutes);
+app.use("/api/ben",benRoutes);	
 
 db.sequelize.sync().then(()=>{
 	app.listen(PORT,()=>{
