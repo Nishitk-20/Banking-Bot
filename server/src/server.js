@@ -9,8 +9,10 @@ app.use(express.json());
 // Routes
 const userRoutes = require("./routes/user");
 const BalanceRoutes  = require("./routes/balance");
+const benRoutes = require("./routes/beneficiary");
 
 app.use("/api/user",userRoutes);
+app.use("/api/ben",benRoutes);	
 app.use("/api/balance",BalanceRoutes);
 
 db.sequelize.sync().then(()=>{
