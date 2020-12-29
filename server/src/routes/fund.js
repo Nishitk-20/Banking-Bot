@@ -2,7 +2,18 @@ const express  = require("express");
 const router = express.Router();
 const db = require("../../models");
 
+router.get("/:transId",(req,res)=>{
+    db.FundTransfer.findOne({
+        where: {
+          id: req.params.transId
+        }
+      }).then(response => {
+        res.send(response)
+      });
+})
+
 router.post("/create/:userId",(req,res) =>{
+    console.log(req.body)
     db.FundTransfer.create(
     { 
         benName: req.body.benName ,
