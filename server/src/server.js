@@ -24,6 +24,7 @@ app.use("/api/balance",BalanceRoutes);
 app.use("/api/fund/",fundRoutes);
 app.use("/api/statement/",statementRoutes);
 
+
 db.sequelize.sync().then(()=>{
 	app.listen(PORT,()=>{
 		console.log(`Listening on Port ${PORT}`);

@@ -8,7 +8,8 @@ module.exports = (sequelize,DataTypes) => {
         },
         AccountNumber :{
             type  : DataTypes.BIGINT(11),
-            allowNull : false    
+            allowNull : false,
+            unique : true
         },
         auth : {
             type : DataTypes.BOOLEAN,
