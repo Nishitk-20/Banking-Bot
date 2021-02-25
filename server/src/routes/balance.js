@@ -7,12 +7,14 @@ router.get("/:userId",(req,res)=>{
         where: {
           userId: req.params.userId
         }
-      }).then(response => res.send(response));
+      }).then(response => {
+        res.send(response)
+      });
 });
 
-router.put("/update/:userId",(req,res) =>{
-    db.Balance.update({ curBal: req.body.bal,
-                        timestamp: Date.now() }, {
+router.post("/update/:userId",(req,res) =>{
+    console.log(req.body)
+    db.Balance.update({ curBal: req.body.bal }, {
         where: {
           userId: req.params.userId
         }
