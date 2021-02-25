@@ -20,4 +20,14 @@ router.post("/create/:userId",(req,res) =>{
     });
 })
 
+router.get("/:transId",(req,res)=>{
+    db.FundTransfer.findOne({
+        where: {
+          id: req.params.transId
+        }
+      }).then(response => {
+        res.send(response)
+      });
+})
+
 module.exports = router;

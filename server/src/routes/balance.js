@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../../models");
 
 router.get("/:userId",(req,res)=>{
-    db.Balance.findAll({
+    db.Balance.findOne({
         where: {
           userId: req.params.userId
         }
